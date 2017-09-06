@@ -4,8 +4,7 @@ angular.module('listings').controller('ListingsController', ['$scope', 'Listings
     $scope.detailedInfo = undefined;
     $scope.codeFilt = "";
     $scope.new = {};
-    $scope.ind = 0;
-    $scope.temp = {"code": "abc", "name": "def"}
+    $scope.ind = {};
     
 
 
@@ -21,12 +20,13 @@ angular.module('listings').controller('ListingsController', ['$scope', 'Listings
       $scope.listings.push($scope.new);
       $scope.new = {};
     };
-    $scope.deleteListing = function(index) {
+    $scope.deleteListing = function(y) {
+      var index = $scope.listings.findIndex(x=>x.code===y.code)
       $scope.listings.splice(index, 1);
     };
     $scope.showDetails = function() {
 
-      return $scope.listings[$scope.ind];
+      return $scope.ind;
     };
   }
 ]);

@@ -27,10 +27,10 @@
                 <th>Building Name</th>
                 <th></th>
               </tr>
-              <tr ng-repeat = "x in listings | filter: codeFilt" ng-click = "setInd($index)">
+              <tr ng-repeat = "x in listings | filter: codeFilt" ng-click = "setInd(x)">
                 <td>{{x.code}}</td>
                 <td>{{x.name}}</td>
-                <td><button ng-click = "deleteListing($index)">delete</button></td>
+                <td><button ng-click = "deleteListing(x)">delete</button></td>
               <!-- 
 
                   Fill in the rest of the table:
